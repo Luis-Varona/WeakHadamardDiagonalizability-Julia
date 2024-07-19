@@ -19,4 +19,9 @@ bases_0 = load("../WHD-Julia-LargeFiles/K4-tests/K4-bases_0.jld", "bases_0")
 bases_n = load("../WHD-Julia-LargeFiles/K4-tests/K4-bases_n.jld", "bases_n")
 
 ### Tests
+using FreqTables
 idxs = rand(1:189, 4)
+
+tests = [data.Eigvecs for data in decomp_info3.get_decomps()[idxs]]
+tests2 = [data.OrthoRank for data in decomp_info3.get_decomps()]
+tests2_freq = freqtable(tests2)
