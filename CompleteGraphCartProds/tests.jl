@@ -2,10 +2,6 @@ using FileIO, JLD2
 #include("BFS_WHDiagonalizability/struct-WHDecomp_Set.jl")
 include("BFS_WHDiagonalizability/getall_WHDecomps.jl")
 
-# ### Load structs
-# BasicInfo = FileIO.load("../WHD-Julia-LargeFiles/results.jld2", "BasicInfo")
-# WHDecomp_Set = FileIO.load("../WHD-Julia-LargeFiles/results.jld2", "WHDecomp_Set")
-
 ### Load K_2 and K_3 info
 decomp_info2 = FileIO.load("../WHD-Julia-LargeFiles/results.jld2", "decomp_info2")
 decomp_info3 = FileIO.load("../WHD-Julia-LargeFiles/results.jld2", "decomp_info3")
