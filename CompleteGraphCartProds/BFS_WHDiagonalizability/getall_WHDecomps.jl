@@ -13,7 +13,6 @@ function getall_WHDecomps(L::Matrix{Int64})
     numDecomps = 1 # Initialize the number of decompositions to 1
     d, Λ, M = EigvalsbyMultiplicity(L) # Sort the eigenvalues of 'L' by multiplicity
     eigspace_iter = 1:length(Λ) # [Annotate later]
-    #Eigbases = Vector{Vector{Matrix{Int64}}}(undef, length(Λ))
     Eigbases = [Vector{Matrix{Int64}}() for i in eigspace_iter] ## [Annotate later]
     #iter_sets = Vector{UnitRange{Int64}}(undef, length(Λ)) # [Annotate later]
 

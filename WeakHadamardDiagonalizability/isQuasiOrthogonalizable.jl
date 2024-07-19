@@ -7,11 +7,33 @@ Returns: a boolean 'isQuasi' and an ordering 'orderQuasi' if such an ordering ex
 """
 function isQuasiOrthogonalizable(X::Matrix)
     n = size(X, 2)
+    if n == 1
+        isQuasi = true
+        orderQuasi = [1]
+        return isQuasi, orderQuasi
+    end
+
     adj_list = [Vector{Int64}() for vertex in 1:n]
 
     # BEGIN: Construct the adjacency list of the orthogonality graph complement of X
+    # for col1 in 1:n
+    #     for col2 in (col1 + 1):n
+    #         dotproduct = X[:, col1]' * X[:, col2]
+    #         if isapprox(dotproduct, 0) == false
+    #             if length(adj_list[col1]) == 2 || length(adj_list[col2]) == 2
+    #                 isQuasi = false
+    #                 orderQuasi = missing
+    #                 return isQuasi, orderQuasi
+    #             end
+
+    #             push!(adj_list[col1], col2)
+    #             push!(adj_list[col2], col1)
+    #         end
+    #     end
+    # end
     for (idx1, col1) in enumerate(eachcol(X))
         for (idx2, col2) in enumerate(eachcol(X)[(idx1 + 1):end])
+            idx2 += idx1
             dotproduct = col1' * col2
             if isapprox(dotproduct, 0) == false
                 if length(adj_list[idx1]) == 2 || length(adj_list[idx2]) == 2

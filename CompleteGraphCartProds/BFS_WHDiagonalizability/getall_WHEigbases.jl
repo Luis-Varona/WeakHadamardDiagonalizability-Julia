@@ -7,7 +7,6 @@ function getall_WHEigbases(L::Matrix{Int64}, λ::Int64, μ::Int64)
     eigvecs, numEigvecs = EigvecsZeroOneNeg(L, λ)
 
     if numEigvecs < μ
-        #hasBasis = false
         numBases = 0
         bases = missing
         return numBases, bases
