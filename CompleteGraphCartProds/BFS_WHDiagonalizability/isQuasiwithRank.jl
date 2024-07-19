@@ -4,11 +4,11 @@ function isQuasiwithRank(X::Matrix)
     orthoRank = n*(n - 1)/2
 
     # BEGIN: Construct the adjacency list of the orthogonality graph complement of X
-    for col1 in 1:(n - 1)
-        for col2 in (col1 + 1):n
-            dotproduct = X[:, col1]' * X[:, col2]
+    for (idx1, col1) in enumerate(eachcol(X))
+        for (idx2, col2) in enumerate(eachcol(X)[(idx1 + 1):end])
+            dotproduct = col1' * col2
             if isapprox(dotproduct, 0) == false
-                if length(adj_list[col1]) == 2 || length(adj_list[col2]) == 2
+                if length(adj_list[idx1]) == 2 || length(adj_list[idx2]) == 2
                     isQuasi = false
                     orderQuasi = missing
                     orthoRank = missing
@@ -16,8 +16,8 @@ function isQuasiwithRank(X::Matrix)
                 end
 
                 orthoRank -= 1
-                push!(adj_list[col1], col2)
-                push!(adj_list[col2], col1)
+                push!(adj_list[idx1], idx2)
+                push!(adj_list[idx2], idx1)
             end
         end
     end
