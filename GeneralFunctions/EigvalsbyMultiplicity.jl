@@ -1,4 +1,4 @@
-using FreqTables
+using LinearAlgebra, FreqTables
 
 """
     EigvalsbyMultiplicity(L::Matrix{Int64})
