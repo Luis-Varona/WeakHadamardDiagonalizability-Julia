@@ -44,12 +44,3 @@ struct WHDecomp_Set{T}
         new{typeof(foo)}(main_info, foo)
     end
 end
-
-# struct WeakHadamardDecomp
-#     Eigvecs::Matrix{Int64}
-#     Eigvals::Vector{Int64}
-#     OrthoRank::Int64
-#     IsWeighing::Bool
-#     IsOneNeg::Bool
-#     IsHadamard::Bool
-# end

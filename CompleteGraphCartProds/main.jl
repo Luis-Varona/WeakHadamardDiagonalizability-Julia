@@ -1,6 +1,5 @@
 using LinearAlgebra, Kronecker
 include("BFS_WHDiagonalizability/getall_WHDecomps.jl")
-include("BFS_WHDiagonalizability/struct-WHDecomp_Set.jl")
 
 ###
 function CompleteGraph(n::Int64)
