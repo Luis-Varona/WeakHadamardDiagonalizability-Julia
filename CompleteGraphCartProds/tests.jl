@@ -1,4 +1,4 @@
-using FileIO, JLD2
+using JLD, JLD2, FileIO
 #include("BFS_WHDiagonalizability/struct-WHDecomp_Set.jl")
 include("BFS_WHDiagonalizability/getall_WHDecomps.jl")
 
