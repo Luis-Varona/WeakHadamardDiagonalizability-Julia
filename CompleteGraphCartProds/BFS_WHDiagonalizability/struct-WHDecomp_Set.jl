@@ -15,7 +15,7 @@ struct WHDecomp_Set{T}
         IsOneNeg::Bool
         IsHadamard::Bool
     end
-    #Vector{Vector{Matrix{Int64}}}
+    
     main_info::BasicInfo
     get_decomps::T
 

@@ -1,5 +1,6 @@
 using FileIO, JLD2
-include("BFS_WHDiagonalizability/struct-WHDecomp_Set.jl")
+#include("BFS_WHDiagonalizability/struct-WHDecomp_Set.jl")
+include("BFS_WHDiagonalizability/getall_WHDecomps.jl")
 
 # ### Load structs
 # BasicInfo = FileIO.load("../WHD-Julia-LargeFiles/results.jld2", "BasicInfo")
