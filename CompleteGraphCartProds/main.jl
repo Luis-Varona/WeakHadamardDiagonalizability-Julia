@@ -18,17 +18,16 @@ Cart_K3 = KroneckerSum(CompleteGraph(3)[2], CompleteGraph(3)[2])
 Cart_K4 = KroneckerSum(CompleteGraph(4)[2], CompleteGraph(4)[2])
 
 ###
-# decomp_info2 = getall_WHDecomps(Cart_K2)
-# decomp_info3 = getall_WHDecomps(Cart_K3)
+decomp_info2 = getall_WHDecomps(Cart_K2)
+decomp_info3 = getall_WHDecomps(Cart_K3)
 # decomp_info4 = getall_WHDecomps(Cart_K4)
 
 ###
 using FileIO, JLD2
-# FileIO.save(
-#     "../WHD-Julia-LargeFiles/results.jld2",
-#     "BasicInfo", BasicInfo, "WHDecomp_Set", WHDecomp_Set,
-#     "decomp_info2", decomp_info2, "decomp_info3", decomp_info3
-# )
+FileIO.save(
+    "../WHD-Julia-LargeFiles/results.jld2",
+    "decomp_info2", decomp_info2, "decomp_info3", decomp_info3
+)
 
 decomp_info2 = FileIO.load("../WHD-Julia-LargeFiles/results.jld2", "decomp_info2")
 decomp_info3 = FileIO.load("../WHD-Julia-LargeFiles/results.jld2", "decomp_info3")

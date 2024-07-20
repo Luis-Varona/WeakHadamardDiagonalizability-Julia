@@ -1,4 +1,4 @@
-# isWHDiagonalizable-Julia
+# WeaklyHadamardDiagonalizable-Julia
 An algorithm to tests simple, connected graphs for weak Hadamard diagonalizability.
 Can test any graph of order <= 13 in minutes (and many higher-order graphs as well).
 

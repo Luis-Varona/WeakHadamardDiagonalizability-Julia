@@ -1,6 +1,6 @@
 include("../../GeneralFunctions/EigvalsbyMultiplicity.jl")
 include("getall_WHEigbases.jl")
-include("struct-WHDecomp_Set.jl")
+include("struct_WHDecomp_Set.jl")
 
 # struct WeakHadamardDecomps
 #     Eigvals::Vector{Int64}

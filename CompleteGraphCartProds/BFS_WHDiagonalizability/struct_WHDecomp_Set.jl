@@ -40,7 +40,8 @@ struct WHDecomp_Set{T}
             return WHDecomp(decomp, orthoRank, isWeighing, isOneNeg, isHadamard)
         end
 
-        foo() = [decomp_attrs(decomp) for decomp in decomps]
+        # foo() = [decomp_attrs(decomp) for decomp in decomps]
+        foo = [decomp_attrs(decomp) for decomp in decomps]
         new{typeof(foo)}(main_info, foo)
     end
 end
